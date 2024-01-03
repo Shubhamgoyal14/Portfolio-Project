@@ -1,0 +1,51 @@
+{% if messages %}
+    {% for message in messages %}
+        {{ message }}
+    {% endfor %}
+{% endif %}
+
+<link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+    <style>
+        .formspace {
+            margin-top: 20px; /* Adjust the value as needed */
+        }
+    </style>
+    <style>
+    .container {
+        width: 305px;
+        padding: 30px;
+        background-color: #0000FF;
+        border: 2px solid #ddd;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        color: #fff; /* White text color */
+
+      }
+      body{
+        background-image: url("https://media.istockphoto.com/id/1203930856/photo/blue-color-modern-background.webp?b=1&s=170667a&w=0&k=20&c=PmPMwETHmtbNMJY3MwFbgdg3aqiMm-EfBtiRFM4K2SY=");
+        background:rgb(192,192,192,0.8)
+      }
+    </style>
+<h3 style="margin-left: 612px; margin-top: 50px;"> Login </h3>
+<div class="container">
+    <form action="" method="post">
+        {% csrf_token %}
+        <div class="formspace">
+        <label for="username">Username: </label>
+        <input type="text" id="username" name="username"><br>
+        </div>
+        <div class="formspace">
+        <label for="password">Password: </label>
+        <input type="password" id="password" name="password"><br>
+        </div>
+        <div class="formspace">
+        <input type="submit" value="Submit">
+        </div>
+    </form>
+</div>
+
+</body>
+        

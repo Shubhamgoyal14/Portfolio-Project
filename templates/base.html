@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}My Personal Portfolio{% endblock title %}</title>
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+    <link rel="stylesheet" href="{% static 'projects/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'ok.css' %}">
+    <style>
+        #footer {
+            position: fixed;
+            padding: 10px 10px 10px 450px;
+            bottom: 0;
+            width: 100%;
+            /* Height of the footer*/
+            height: 40px;
+           
+        }
+        body{
+        background:rgb(192,192,192,0.8)
+        }
+        .button-like {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            border: 2px solid #3498db;
+            color: #3498db;
+            border-radius: 5px;
+            background-color: #fff;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Hover effect */
+        .button-like:hover {
+            background-color: #3498db;
+            color: #fff;
+        }
+    </style>
+    <h4><div style="text-align: center;">
+    {% if messages %}
+    {% for message in messages %}
+      {{ message}}
+    {% endfor %}
+  {% endif %}
+</div></h4>
+    <h3 style="text-align: right; margin-top: 10px;"> <a href="{% url 'register' %}" style="margin-right: 10px;" class="button-like">Register</a><a href="{% url 'login' %}" class="button-like">Login</a> </h3> 
+    
+    <h1 style="margin-bottom: 30px;">Projects</h1>
+</head>
+<body class="container">
+{% block page_content %}{% endblock page_content %}
+<div   id="footer"   >
+    <!-- Your footer content goes here -->
+    <p>&copy; 2023 My Website. All rights reserved.</p>
+</div>
+</body>
+</html>

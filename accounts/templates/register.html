@@ -1,0 +1,63 @@
+{% load static %}
+<link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+    <style>
+        .formspace {
+            width: 300px;
+            padding: 20px;
+            background-color:  #0000FF;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            color: #fff; /* White text color */
+          }
+          body{
+            background:rgb(192,192,192,0.8)
+          }
+    </style>
+
+        
+<h3 style="margin-top:40px; margin-left:194px; margin-bottom:20px; ">Register</h3>
+{% comment %} <a href="{% url('login') %}">Logon</a> {% endcomment %}
+<div class="container">
+<form method="post" action="{% url 'register' %}">
+    {% csrf_token %}
+    <div class="formspace">
+    {{ form.username.label }}
+    {{ form.username }}
+    <br>
+    </div>
+    <div class="formspace">
+    {{ form.first_name.label }}
+    {{ form.first_name }}
+    <br>
+    </div>
+    <div class="formspace">
+    {{ form.last_name.label }}
+    {{ form.last_name }}
+    <br>
+    </div>
+    <div class="formspace">
+    {{ form.email.label }}
+    {{ form.email }}
+    <br>
+    </div>
+    <div class="formspace">
+    {{ form.password1.label }}<br>
+    {{ form.password1 }}
+    <br>
+    </div>
+    <div class="formspace">
+    {{ form.password2.label }}
+    {{ form.password2 }}
+    <br>
+    </div>
+
+    <div class="formspace">
+    <input type="submit" value="Submit">
+    </div>
+</form>
+</div>
+</body>
